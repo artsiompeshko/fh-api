@@ -1,11 +1,14 @@
-# Jets Project
+# Football highlights
+Football highlights API built with [jets](https://rubyonjets.com/quick-start/).
 
-This README would normally document whatever steps are necessary to get the application up and running.
+## Getting Started
+```
+bundle install
+jets s
+```
 
-Things you might want to cover:
-
-* Dependencies
-* Configuration
-* Database setup
-* How to run the test suite
-* Deployment instructions
+### Deploying PROD
+```
+JETS_ENV=production jets db:migrate
+JETS_AGREE=yes JETS_ENV=production AWS_PROFILE=fh jets deploy
+```

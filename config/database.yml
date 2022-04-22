@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV["DB_POOL"] || 5  %>
-  database: <%= ENV['DB_NAME'] || 'fh_api_development' %>
+  database: <%= ENV['DB_NAME'] || 'fh-dev' %>
   username: <%= ENV['DB_USER'] || ENV['USER'] %>
   password: <%= ENV['DB_PASS'] %>
   host: <%= ENV["DB_HOST"] %>
@@ -11,13 +11,13 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'fh_api_development' %>
+  database: <%= ENV['DB_NAME'] || 'fh-dev' %>
 
 test:
   <<: *default
-  database: fh_api_test
+  database: fh-test
 
 production:
   <<: *default
-  database: fh_api_production
+  database: fh-prod
   url: <%= ENV['DATABASE_URL'] %>
